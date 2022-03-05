@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PrivaChat</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/x-icon/300Logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/x-icon/300Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/x-icon/300Logo.png">
+    <link rel="manifest" href="images/x-icon/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <img src="images/x-icon/300Logo.png" alt="logo" id="dog"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/axios.js"></script>
+
+    </head>
+  <body>
+    <header>
+      <div class="countdown">
+        <div class="logo">
+          <a href="/">          </a>
+          <h1>PrivaChat </h1>
+          <p>Your Wallet Address</p>
+          <p class="container" id="wallet-address" ></p>
+          <p>Send to (Address):<textarea id="send-address" 
+            rows="1" cols="50">
+            </textarea>
+          <p class="container">
+        </div>
+      </div>
+    </header>
+
+<body>
+      
+          <!-- </div>
+          <label for="story" id="story">Type message here: </label>
+      
+            <textarea id="story" name="story"
+            rows="20" cols="15">Hello, I am interested in your...
+            </textarea>
+            <button id="mint"> Mint </button>
+
+
+          </div> -->
+          <body>
+            <input type="text" placeholder="Type something..." id="messageArea">
+            <input type="text" placeholder="address" id="recepientAddress">
+
+
+            <button type="button" onclick="buildJson();">Get Value</button>
+
+            <p id="demo"></p>
+            <br>
+            <p id="demo1"></p>
+<!-- 
+            <script>
+              function buildJson() {
+                var y = document.getElementById("messageArea").value;
+                var x = document.getElementById("recepientAddress").value;
+                var f = '{"address" :"'+x +'", "message" :"' +y +' "}'
+                console.log(f)
+                //const myJSON= '{"address":"0x123456", "message":"I want to buy your NFT"}';
+                //const myObj = JSON.parse(myJSON);
+        
+                const myObj = JSON.parse(f);
+                document.getElementById("demo").innerHTML = myObj.address;
+
+                document.getElementById("demo1").innerHTML = myObj.message;
+                alert(myObj)
+  
+              }
+            </script> -->
+
+            <button type="button" onclick="URI();">URI</button>
+
+        </body>
+    <script type="text/javascript">
+
+      var account = null;
+      var contract = null;
+      const ABI = [];
+      const ADDRESS = "0xa10b4631Dc00241D244b3295413D80C9c48f2B44";
+
+      (async () => {
+        if (window.ethereum){
+          await window.ethereum.send("eth_requestAccounts");
+          window.web3 = new Web3(window.ethereum);
+
+          var accounts = await web3.eth.getAccounts();
+
+          account = accounts[0];
+          document.getElementById('wallet-address').textContent = account;
+      }
+      })();
+
+
+    </script>
+
+    <section class="container">
+      <div class="owner-status"></div>
+      <div class="countdown"> 
+        <form action="info.html">  
+          Tech Specs<input type="submit"/>  
+       </form>
+      </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@metamask/onboarding@1.0.1/dist/metamask-onboarding.bundle.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/app.js"></script>
+
+  
+  </body>
+  </html>
